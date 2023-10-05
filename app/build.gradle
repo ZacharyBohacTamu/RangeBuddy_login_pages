@@ -1,11 +1,12 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.chaquo.python'
 }
 
 android {
     namespace 'com.example.mainpage_rangebuddy'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.mainpage_rangebuddy"
@@ -13,6 +14,23 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
+
+        //Python code
+        ndk {
+            abiFilters "armeabi-v7a", "x86"
+        }
+        python {
+            version "3.8"
+            buildPython "C:/Users/Zacha/AppData/Local/Programs/Python/Python38-32/python.exe"
+            pip {
+                install "Pillow"
+            }
+        }
+        sourceSets {
+            main {
+                python.srcDir "src/main/python"
+            }
+        }
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

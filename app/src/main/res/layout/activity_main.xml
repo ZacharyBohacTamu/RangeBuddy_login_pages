@@ -13,29 +13,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/ManualToPicturePage"
-            android:layout_width="180dp"
-            android:layout_height="75dp"
-            android:layout_marginBottom="140dp"
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="632dp"
             android:fontFamily="monospace"
-            android:text="@string/manual"
-            android:textSize="22sp"
+            android:text="@+id/textview"
+            android:textColor="@color/white"
+            android:textSize="40sp"
             android:textStyle="bold"
             android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.52"
             app:layout_constraintStart_toStartOf="parent"
-            app:rippleColor="#101010" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/AutomaticToPicturePage"
+            android:id="@+id/StartSession"
             android:layout_width="180dp"
             android:layout_height="80dp"
-            android:layout_marginBottom="208dp"
+            android:layout_marginBottom="200dp"
             android:fontFamily="monospace"
-            android:text="@string/automatic"
+            android:text="Start Session"
             android:textSize="20sp"
             android:textStyle="bold"
             android:visibility="visible"
@@ -49,7 +50,7 @@
             android:id="@+id/ToPastSessionsPage"
             android:layout_width="180dp"
             android:layout_height="80dp"
-            android:layout_marginBottom="68dp"
+            android:layout_marginBottom="120dp"
             android:fontFamily="monospace"
             android:text="@string/past_sessions"
             android:textSize="20sp"
@@ -74,7 +75,7 @@
             app:srcCompat="@android:drawable/ic_dialog_info" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="130dp"
@@ -100,12 +101,12 @@
 
         <ImageView
             android:id="@+id/imageView3"
-            android:contentDescription="@string/target"
             android:layout_width="170dp"
             android:layout_height="503dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/target"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.518"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/target_transparent_7" />

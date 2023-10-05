@@ -6,6 +6,10 @@ import android.widget.Button
 import android.content.Intent
 import android.view.Window
 import android.widget.ImageButton
+import android.widget.TextView
+import com.chaquo.python.PyObject
+import com.chaquo.python.Python
+import com.chaquo.python.android.AndroidPlatform
 
 class MainActivity : AppCompatActivity() {
     //variables called
@@ -13,6 +17,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var AutomaticPictureMode: Button
     private lateinit var ManualPictureMode: Button
     private lateinit var PastSessionsPage: Button
+
+    private lateinit var TextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +29,21 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
+        //Python Code testing
+        TextView = findViewById(R.id.textView)
+
+        //code to run Python scripts sometimes. to call them
+        if (!Python.isStarted()) {
+            Python.start(AndroidPlatform(this))
+        }
+
+        val py = Python.getInstance()
+        val pyobj = py.getModule("TestPy") //name of python file
+        val obj = pyobj.callAttr("main") //name of function in python file
+
+        TextView.text = obj.toString() //prints out the output of the python file
+
+
         //button to information page
         ToInformationPage = findViewById(R.id.Information)
         ToInformationPage.setOnClickListener {
@@ -30,24 +51,16 @@ class MainActivity : AppCompatActivity() {
             startActivity(ToHelp)
         }
         //button to PicturePage
-        AutomaticPictureMode = findViewById(R.id.AutomaticToPicturePage)
+        AutomaticPictureMode = findViewById(R.id.StartSession)
         AutomaticPictureMode.setOnClickListener {
             val Auto = Intent(this, PhotoPage::class.java)
             startActivity(Auto)
-        }
-        //button to PicturePage
-        ManualPictureMode = findViewById(R.id.ManualToPicturePage)
-        ManualPictureMode.setOnClickListener {
-            val Manual = Intent(this, PhotoPage::class.java)
-            startActivity(Manual)
         }
         //button to PastSessionsPage
         PastSessionsPage = findViewById(R.id.ToPastSessionsPage)
         PastSessionsPage.setOnClickListener {
             val Past = Intent(this, PastSessions::class.java)
             startActivity(Past)
-
-
         }
 
 

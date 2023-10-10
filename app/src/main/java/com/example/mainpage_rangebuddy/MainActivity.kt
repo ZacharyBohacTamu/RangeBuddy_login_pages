@@ -14,8 +14,7 @@ import com.chaquo.python.android.AndroidPlatform
 class MainActivity : AppCompatActivity() {
     //variables called
     private lateinit var ToInformationPage: ImageButton
-    private lateinit var AutomaticPictureMode: Button
-    private lateinit var ManualPictureMode: Button
+    private lateinit var StartSession: Button
     private lateinit var PastSessionsPage: Button
 
     private lateinit var TextView: TextView
@@ -24,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         //hiding the title bar
-        requestWindowFeature(Window.FEATURE_NO_TITLE)
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         supportActionBar?.hide()
 
         setContentView(R.layout.activity_main)
@@ -51,8 +50,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(ToHelp)
         }
         //button to PicturePage
-        AutomaticPictureMode = findViewById(R.id.StartSession)
-        AutomaticPictureMode.setOnClickListener {
+        StartSession = findViewById(R.id.StartSession)
+        StartSession.setOnClickListener {
             val Auto = Intent(this, PhotoPage::class.java)
             startActivity(Auto)
         }

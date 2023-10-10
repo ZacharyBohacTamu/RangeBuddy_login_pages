@@ -22,24 +22,9 @@ import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import androidx.camera.core.*
 import android.view.*
+import com.chaquo.python.Python
+import com.chaquo.python.android.AndroidPlatform
 import com.example.mainpage_rangebuddy.databinding.ActivityPhotoPageBinding
-
-//import androidx.camera.core.*
-//import androidx.camera.core.AspectRatio
-//import android.view.ScaleGestureDetector.OnScaleGestureListener
-//import androidx.camera.core.CameraX
-//import androidx.lifecycle.LifecycleOwner
-//import com.example.mainpage_rangebuddy.R
-//import android.widget.SeekBar
-//import android.location.GnssAntennaInfo.Listener
-//import com.example.mainpage_rangebuddy.databinding.ActivityMainBinding
-//import java.io.FileOutputStream
-//import android.widget.ImageButton
-//import android.os.Environment
-//import android.os.Handler
-//import android.os.HandlerThread
-//import android.media.ImageReader
-//import android.media.ImageReader.OnImageAvailableListener
 
 class PhotoPage : AppCompatActivity() {
     //ui functions variables
@@ -80,6 +65,7 @@ class PhotoPage : AppCompatActivity() {
         //toast for stating set has been grouped by pressing Grouping button
         val grouping = findViewById<Button>(R.id.Grouping)
         grouping.setOnClickListener {
+            //comparisonCall()
             Toast.makeText(this, "Set Grouped", Toast.LENGTH_SHORT).show()
         }
 
@@ -213,6 +199,16 @@ class PhotoPage : AppCompatActivity() {
         cameraExecutor.shutdown()
     }
 
-
+    //python calling functions
+    /*fun comparisonCall() {
+        if (!Python.isStarted()) {
+            Python.start(AndroidPlatform(this))
+        }
+        val py = Python.getInstance()
+        val pyobj = py.getModule("Comparison")
+        val obj = pyobj.callAttr("comparison", Recent_image_1, Recent_image_2)
+        Log.d("Python function comparison is being ran", obj.toString())
+        Toast.makeText(this, "Python script is running", Toast.LENGTH_SHORT).show()
+    }*/
 }
 

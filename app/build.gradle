@@ -11,7 +11,7 @@ android {
     defaultConfig {
         applicationId "com.example.mainpage_rangebuddy"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -24,6 +24,8 @@ android {
             buildPython "C:/Users/Zacha/AppData/Local/Programs/Python/Python38-32/python.exe"
             pip {
                 install "Pillow"
+                install "opencv-python"
+                install "math"
             }
         }
         sourceSets {
@@ -56,9 +58,9 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.10.0'
+    implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

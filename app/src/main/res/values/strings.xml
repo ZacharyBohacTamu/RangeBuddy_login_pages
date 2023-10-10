@@ -12,4 +12,6 @@
     <string name="take_picture">Take Picture</string>
     <string name="target" />
     <string name="up_to_15_past_sessions" />
+    <string name="start_session">Start Session</string>
+    <string name="login">Login</string>
 </resources>

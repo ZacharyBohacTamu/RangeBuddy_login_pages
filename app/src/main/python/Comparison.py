@@ -1,10 +1,9 @@
 from operator import abs
-import range as range
 from PIL import Image, ImageFilter
 
 
 # compares the two images for shot location to be received
-def comparison(input_image1, input_image2):
+def comparison(input_image1, input_image2, output_image):
     # open images
     image1 = Image.open(input_image1).convert('L')
     image2 = Image.open(input_image2).convert('L')
@@ -32,7 +31,7 @@ def comparison(input_image1, input_image2):
                 output.putpixel((x, y), 0)  # pixel is same, Black it out
 
     # print("Files have been compared")
-    # output.save("Shot_location.jpg", "JPEG", quality=95)
+    output.save(output_image, "JPEG")
     # print("Files have been saved as: ", output_image)
     # download image to computer
-    return output
+    return output_image

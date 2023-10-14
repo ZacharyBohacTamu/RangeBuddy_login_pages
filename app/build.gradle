@@ -25,7 +25,6 @@ android {
             pip {
                 install "Pillow"
                 install "opencv-python"
-                install "math"
             }
         }
         sourceSets {

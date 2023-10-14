@@ -27,10 +27,10 @@ def Grouping(coordinates):
         sumX += x
         sumY += y
     # creates average for both coorindates
-    avgX = sumX / len(coordinates)
-    avgY = sumY / len(coordinates)
+    # avgX = sumX / len(coordinates)
+    # avgY = sumY / len(coordinates)
 
-    print(f"Middle of Shot is ({avgX},{avgY})") # really only need Group_dist
+    # print(f"Middle of Shot is ({avgX},{avgY})") # really only need Group_dist
     print(f"Grouping Size is {Group_dist} inches")
 
-    return Group_dist, avgX, avgY
+    return Group_dist

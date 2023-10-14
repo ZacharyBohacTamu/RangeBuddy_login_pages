@@ -17,72 +17,73 @@
             android:id="@+id/BacktoMainPage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="5dp"
             android:text="@string/Finish"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.949"
+            app:layout_constraintHorizontal_bias="0.968"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/save_Session"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:text="Save Session"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/BacktoMainPage"
-            app:layout_constraintHorizontal_bias="0.075"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.022"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.976" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
-            android:id="@+id/MoA_Stat"
+            android:id="@+id/Gun"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="152dp"
-            android:text="MoA:"
+            android:layout_marginBottom="160dp"
+            android:text="Gun:"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.03"
+            app:layout_constraintHorizontal_bias="0.029"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/type_of_target"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="128dp"
-            android:text="Rate of Fire:"
+            android:layout_marginBottom="130dp"
+            android:text="ToT:"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.036"
+            app:layout_constraintHorizontal_bias="0.029"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/Number_of_points"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="104dp"
-            android:text="Distance from Target:"
+            android:layout_marginBottom="100dp"
+            android:text="Points:"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.051"
+            app:layout_constraintHorizontal_bias="0.031"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/Group_Size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="80dp"
+            android:layout_marginBottom="70dp"
             android:text="Group Size:"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -102,6 +103,17 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/pxl_20230419_005723205" />
+
+        <Button
+            android:id="@+id/Test_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="128dp"
+            android:text="Image_cal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.949"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>

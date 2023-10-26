@@ -52,7 +52,7 @@ class SessionsData : AppCompatActivity() {
 
 
     }
-
+    //
     fun ContentResolver.imagegrabber(
         directoryPath: String,
         imageCount: Int,
@@ -124,10 +124,11 @@ class SessionsData : AppCompatActivity() {
         val images = contentResolver.imagegrabber(directoryPath, imageCount)
         //calls the python function
 
-        //val image1 = "/storage/emulated/0/Android/media/com.example.mainpage_rangebuddy/Main Page-Range Buddy/23-09-21-13-40-43-748.jpg"
-        //val image2 = "/storage/emulated/0/Android/media/com.example.mainpage_rangebuddy/Main Page-Range Buddy/23-10-05-12-49-18-367.jpg"
+        // val image1 = "/storage/emulated/0/Android/media/com.example.mainpage_rangebuddy/Main Page-Range Buddy/Target_1.jpg"
+        // val image2 = "/storage/emulated/0/Android/media/com.example.mainpage_rangebuddy/Main Page-Range Buddy/Target_3.jpg"
         Toast.makeText(this, "comparison is beginning to run", Toast.LENGTH_SHORT).show()
-        val bullet_image = pyobj.callAttr("comparison", images[0], images[1], output_image)
+
+        val bullet_image = pyobj.callAttr("comparison", images[0], images[1], output_image) // image[0], image[1], output_image
         //Log.d("Python function comparison is being ran", bullet_image.toString())
         Toast.makeText(this, "comparison is finished running & bullet_coords is beginning to run", Toast.LENGTH_LONG).show()
 
@@ -135,14 +136,14 @@ class SessionsData : AppCompatActivity() {
         Log.d("Python function bullet_coords is being ran", bullets_XnY.toString())
         Toast.makeText(this, "bullet_coords is finished running", Toast.LENGTH_LONG).show()
 
-        val bullet_group = pyobj2.callAttr("Grouping", bullets_XnY)
+        val bullet_group = pyobj2.callAttr("Grouping", bullets_XnY) // data to send to back end
         Log.d("Python function Grouping is being ran", bullet_group.toString())
         Toast.makeText(this, "Grouping is finished running", Toast.LENGTH_LONG).show()
         //update text to be new text
         val bulletgroupTextView = findViewById<TextView>(R.id.Group_Size)
         bulletgroupTextView.text = "Bullet Group: $bullet_group in"
 
-        val point_calc = pyobj3.callAttr("Point_Calcs", bullets_XnY, bullet_image) //needs more inputs but might fix it to just have one input to make sure it works
+        val point_calc = pyobj3.callAttr("Point_Calcs", bullets_XnY, bullet_image) //data to send to back end
         Log.d("Python function Point_Calcs is being ran", point_calc.toString())
         Toast.makeText(this, "Point_Calcs is finished running", Toast.LENGTH_LONG).show()
         val pointcalcTextView = findViewById<TextView>(R.id.Number_of_points)
